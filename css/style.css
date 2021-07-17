@@ -1,0 +1,211 @@
+/*Geral*/
+:root {
+    --preto: #0D0D0D;
+    --branco: #F2F2F2; 
+    --chumbo: #262626;
+    --cinza: #BFBFBF;    
+    --cinzaClaro: #D9D9D9;  
+    --rosa: #E888E1;
+}
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.titulo-padrao {
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    margin: 20px;
+}
+
+/*Header*/
+header {
+    height: 60px;
+    background-color: var(--chumbo);  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;     
+}
+.header-titulo {
+    color: var(--branco);
+	font-weight: 700;
+	font-size: 24px;
+    display: inline-block;
+    margin:0 10px;
+}
+.lista-navegacao {
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+}
+.lista-navegacao-itens {
+    color: var(--branco);
+	font-weight: 300;
+    text-decoration: none;	
+    display: inline-block;
+    margin:0 10px;
+}
+
+/*Sobre*/
+.container {
+    background: rgb(249,209,249);
+    background: linear-gradient(162deg, rgba(249,209,249,1) 10%, rgba(217,113,214,1) 100%);
+    padding-bottom: 10px;
+    color: var(--branco);    
+}
+.sobre-imagem { 
+    max-width: 80vw;
+    padding: 1.5% 10%;    
+}
+.sobre-titulo {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 10px; 
+}
+.sobre-descricao {
+    font-size: 28px;
+    font-weight: 300;
+    margin: 10px;
+}
+
+/*Cadastro*/
+.cadastro-container {
+    background: rgba(38,38,38,0.7);
+    padding: 10px;
+    margin: 2%;
+    border-radius: 10px;
+    text-align: center;
+}
+.cadastro h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 0.5rem; 
+}
+.cadastro p {
+    font-weight: 300;
+    margin: 0.5rem; 
+}
+.cadastro-input {
+    display: inline;
+	margin: 0.3rem 2px;
+    padding: 2px;	
+    border-radius: 5px;
+    border: 1px solid var(--cinza);
+    text-align: center;
+}
+#nome {
+    width: 30%;
+}
+#email {
+    width: 60%;
+}
+.botao, .form-content p {
+    width: 95%;
+    background-color: var(--preto);
+    font-weight: 700;
+    color: var(--branco);
+    padding: 8px;
+    margin: 5px 2px;
+    border-radius: 5px;
+    border: 1px solid var(--chumbo);
+}
+
+/*Produtos*/
+.produtos {
+    background-color: var(--branco);
+    color: var(--chumbo);
+    padding: 2%;
+}
+.produtos-imagem {
+    max-width: 31vw;
+}
+.produtos-link {
+    display: block;
+    text-align: right;
+    text-decoration: none;
+    color: var(--chumbo);
+	font-weight: 300;
+	font-size: 16px;
+    padding: 15px;
+}
+
+/*Clientes*/
+.clientes{
+    background-color: var(--chumbo);
+    color: var(--branco);    
+    padding: 20px;
+}
+
+.cliente-depoimento {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    padding: 5px;
+}
+.cliente-foto{
+    border-radius: 100%;
+    border: 2px solid var(--rosa);
+    max-width: 100px;
+}
+.cliente-texto, .cliente-descricao, .cliente-nome {
+    font-weight: 300;
+    font-size: 16px;
+    padding: 5px;
+}
+
+/*Rodapé*/
+footer {
+    height: 60px;
+    border-top: 1px solid var(--cinzaClaro);
+    background-color: var(--chumbo);  
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: var(--branco);
+	font-weight: 300;
+	font-size: 16px;      
+}
+
+/*Responsividade*/
+@media screen and (min-width: 620px){  
+    header{
+        padding: 0 10px;
+    }
+    .container {
+    display: grid;
+    grid-template-columns: 2% 48% 45% 5%;
+    grid-template-rows: 30% 25% 5% 35% 5%;
+    }  
+    .sobre-imagem{
+        grid-column: 2 / 3;
+        grid-row: 1 / 5;
+    }
+    .sobre-texto {
+        vertical-align: text-bottom;
+        grid-column: 3 / 4;
+        grid-row: 2 / 4;
+    }
+    .cadastro {
+        padding: 20px 10px;        
+        grid-column: 3 / 4;
+        grid-row: 4 / 5;
+    }
+    .clientes-container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .cliente-foto{
+        max-width: 90px;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .container {            
+        grid-template-columns: 20% 30% 30% 20%;
+        grid-template-rows: 30% 25% 5% 35% 5%;
+    }
+    .cliente-depoimento {
+        max-width: 30vw;
+    }
+}
